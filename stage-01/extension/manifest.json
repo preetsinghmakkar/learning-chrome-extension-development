@@ -1,0 +1,19 @@
+{
+  "name": "Amazon Product Picker",
+  "description": "Picking amazon products for creating demand",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "tabs", "scripting", "cookies"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {},
+  "host_permissions": ["http://localhost:3000/*", "https://*/*"]
+}
